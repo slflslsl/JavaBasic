@@ -1,11 +1,19 @@
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
 
-        while (true) {
-            System.out.println("공격!");
-            Thread.sleep(3000);
-        }
+    static int heal(int amount) {
+        return amount;
+    }
+
+    public static void main(String[] args) {
+
+        int playerHp = 50;
+
+        playerHp += heal(10);
+        System.out.println("HP : " + playerHp);
+        playerHp += heal(20);
+        System.out.println("HP : " + playerHp);
+        playerHp += heal(30);
+        System.out.println("HP : " + playerHp);
+
     }
 }
