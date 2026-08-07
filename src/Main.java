@@ -1,12 +1,16 @@
 public class Main {
-    static int max(int a, int b) {
-        if( a > b) {
-            return a;
-        }
-        return b;
+
+    static boolean critical() {
+        return true;
     }
-    public static void main(String[] args) {
-        System.out.println(max(10, 20));
-        System.out.println(max(50, 30));
-    }
+       static int attack (int damage) {
+           if (critical()) {
+               System.out.println("크리티컬 데미지가 발생하였습니다!");
+               return damage * 2;
+           }
+           return damage;
+       }
+      public static void main(String[] args) {
+         System.out.println("데미지 : " + attack(30));
+       }
 }
