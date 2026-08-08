@@ -1,16 +1,18 @@
+
 public class Main {
 
-    static boolean critical() {
-        return true;
+    static int attack(int monsterHp, int damage) {
+        return monsterHp - damage;
     }
-       static int attack (int damage) {
-           if (critical()) {
-               System.out.println("크리티컬 데미지가 발생하였습니다!");
-               return damage * 2;
-           }
-           return damage;
-       }
-      public static void main(String[] args) {
-         System.out.println("데미지 : " + attack(30));
-       }
+
+    public static void main(String[] args) {
+
+        int monsterHp = 100;
+
+        monsterHp = attack(monsterHp, 30);
+        System.out.println("몬스터 HP : " + monsterHp);
+
+        monsterHp = attack(monsterHp, 50);
+        System.out.println("몬스터 HP : " + monsterHp);
+    }
 }
