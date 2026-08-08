@@ -1,18 +1,23 @@
-
 public class Main {
 
-    static int attack(int monsterHp, int damage) {
-        return monsterHp - damage;
+    static int heal(int playerHp, int amount) {
+        if (playerHp + amount >= 100) {
+            System.out.println("체력이 가득 찼습니다!");
+            return 100;
+        }
+
+        System.out.println("회복했습니다!");
+        return playerHp + amount;
     }
 
     public static void main(String[] args) {
 
-        int monsterHp = 100;
+        int playerHp = 70;
 
-        monsterHp = attack(monsterHp, 30);
-        System.out.println("몬스터 HP : " + monsterHp);
+        playerHp = heal(playerHp, 20);
+        System.out.println("HP : " + playerHp);
 
-        monsterHp = attack(monsterHp, 50);
-        System.out.println("몬스터 HP : " + monsterHp);
+        playerHp = heal(playerHp, 20);
+        System.out.println("HP : " + playerHp);
     }
 }
