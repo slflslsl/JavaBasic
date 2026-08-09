@@ -1,23 +1,23 @@
 public class Main {
 
-    static int heal(int playerHp, int amount) {
-        if (playerHp + amount >= 100) {
-            System.out.println("체력이 가득 찼습니다!");
-            return 100;
+    static int attack(int playerHp, int damage) {
+        System.out.println("공격!");
+
+        if (playerHp - damage <= 0) {
+            return 0;
         }
 
-        System.out.println("회복했습니다!");
-        return playerHp + amount;
+        return playerHp - damage;
     }
 
     public static void main(String[] args) {
 
-        int playerHp = 70;
+        int[] playerHp = {100, 80, 50};
+        int damage = 30;
 
-        playerHp = heal(playerHp, 20);
-        System.out.println("HP : " + playerHp);
-
-        playerHp = heal(playerHp, 20);
-        System.out.println("HP : " + playerHp);
+        for (int i = 0; i < playerHp.length; i++) {
+            playerHp[i] = attack(playerHp[i], damage);
+            System.out.println("플레이어 HP : " + playerHp[i]);
+        }
     }
 }
