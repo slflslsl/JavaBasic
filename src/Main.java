@@ -1,20 +1,24 @@
 public class Main {
-    static int attack(int playerHp, int damage) {
-        System.out.println("공격!");
-        if (playerHp - damage <= 0) {
-            return 0;
-        }
-        return playerHp - damage;
-    }
     public static void main(String[] args) {
-        int[] playerHp = {100, 70, 40};
-        int damage = 30;
-        for (int i = 0; i < playerHp.length; i++) {
-            while (playerHp[i] > 0) {
-                playerHp[i] = attack(playerHp[i], damage);
-                System.out.println("플레이어 " + (i + 1) + " HP : " + playerHp[i]);
-            }
-            System.out.println("플레이어 " + (i + 1) + " : 사망");
-        }
+        Player player1 = new Player("철수", 100, 30);
+        Player player2 = new Player("영희", 80, 20);
+        System.out.println("캐릭터명 : " + player1.name);
+        System.out.println("체력 : " + player1.hp);
+        System.out.println("공격력 : " + player1.damage);
+        System.out.println();
+        System.out.println("캐릭터명 : " + player2.name);
+        System.out.println("체력 : " + player2.hp);
+        System.out.println("공격력 : " + player2.damage);
+    }
+}
+class Player {
+    String name;
+    int hp;
+    int damage;
+
+    Player(String name, int hp, int damage) {
+        this.name = name;
+        this.hp = hp;
+        this.damage = damage;
     }
 }
